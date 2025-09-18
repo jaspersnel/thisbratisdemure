@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this brat is demure</title>
+    <link rel="icon" href="LPLogo.png" type="image/png">
+    <link rel="apple-touch-icon" href="LPLogo.png">
+    <style>
+        :root {
+            --gap: 1rem;
+            --max-width: 1000px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            line-height: 1.5;
+            color: #111;
+            background: #f0ede7;
+        }
+
+        /* Force Instagram link to be black in all states */
+        a[href*="instagram.com"]:link,
+        a[href*="instagram.com"]:visited,
+        a[href*="instagram.com"]:hover,
+        a[href*="instagram.com"]:active,
+        a[href*="instagram.com"]:focus {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        #header {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "logo"
+                "left"
+                "right"
+                "left-bottom";
+            gap: var(--gap);
+            padding: 2rem 1rem 0;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            min-height: 100vh;
+            min-height: 100dvh;
+            grid-template-rows: auto auto 1fr auto;
+        }
+
+        #logo {
+            grid-area: logo;
+            text-align: center;
+            margin-top: 4rem;
+            margin-bottom: clamp(3rem, 12vh, 10rem);
+        }
+
+        #logo img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        #left {
+            grid-area: left;
+            display: contents;
+            text-align: left;
+            /* allow children to be grid items of #header */
+        }
+
+        #right {
+            grid-area: right;
+            text-align: right;
+        }
+
+        /* Place the two left paragraphs explicitly in the grid on mobile */
+        #left p:first-child {
+            grid-area: left;
+        }
+
+        #left p:last-child {
+            grid-area: left-bottom;
+        }
+
+
+        @media (min-width: 768px) {
+            #header {
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas:
+                    "logo logo"
+                    "left right";
+                column-gap: 2rem;
+                min-height: initial;
+                grid-template-rows: initial;
+                padding: 2rem 1rem;
+            }
+
+            #left {
+                display: block;
+            }
+        }
+    </style>
+    <meta name="color-scheme" content="light dark">
+    <!-- <style>
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #0b0b0b;
+                color: #eaeaea;
+            }
+        }
+    </style> -->
+</head>
+
+<body>
+    <div id="header">
+        <div id="logo">
+            <img src="LPLogo.png" alt="logo">
+        </div>
+        <div id="left">
+            <p><strong>something new is coming</strong></p><br />
+            <p>© 2025 this brat is demure</p>
+        </div>
+        <div id="right">
+            <p>not just apparel</p>
+            <p>turning statements into curated street style</p>
+            <p>stay tuned <a href="https://www.instagram.com/thisbratisdemure"><strong>@thisbratisdemure</strong></a>
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>
